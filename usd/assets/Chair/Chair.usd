@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    defaultPrim = "Chair"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "Chair" (
+    prepend apiSchemas = ["GeomModelAPI", "AssetPreviewsAPI"]
+    assetInfo = {
+        asset identifier = @./Chair.usd@
+        string name = "Chair"
+        dictionary previews = {
+            dictionary thumbnails = {
+                dictionary default = {
+                    asset defaultImage = @./thumbnail.png@
+                }
+            }
+        }
+    }
+    prepend inherits = </__class__/Chair>
+    kind = "component"
+    prepend payload = @./payload.usdnc@
+)
+{
+    float3[] extentsHint = [(3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (-0.5494721, -0.005182674, -0.3928389), (0.4483474, 0.9423829, 0.50938267), (-0.54952633, -0.0052846354, -0.3923096), (0.44843358, 0.9428961, 0.5095452)]
+}
+
+class "__class__"
+{
+    class "Chair"
+    {
+    }
+}
+

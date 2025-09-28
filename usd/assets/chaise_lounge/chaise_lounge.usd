@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    defaultPrim = "chaise_lounge"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "chaise_lounge" (
+    prepend apiSchemas = ["GeomModelAPI", "AssetPreviewsAPI"]
+    assetInfo = {
+        asset identifier = @./chaise_lounge.usd@
+        string name = "chaise_lounge"
+        dictionary previews = {
+            dictionary thumbnails = {
+                dictionary default = {
+                    asset defaultImage = @./thumbnail.png@
+                }
+            }
+        }
+    }
+    prepend inherits = </__class__/chaise_lounge>
+    kind = "component"
+    prepend payload = @./payload.usdnc@
+)
+{
+    float3[] extentsHint = [(3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (-0.35726357, 0.0016911926, -0.6947444), (0.2781194, 0.81296307, 1.0923425), (-0.35726354, 0.0017442796, -0.6949182), (0.2781193, 0.812963, 1.0923102)]
+}
+
+class "__class__"
+{
+    class "chaise_lounge"
+    {
+    }
+}
+
