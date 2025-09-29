@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    defaultPrim = "classic_window"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "classic_window" (
+    prepend apiSchemas = ["GeomModelAPI", "AssetPreviewsAPI"]
+    assetInfo = {
+        asset identifier = @./classic_window.usd@
+        string name = "classic_window"
+        dictionary previews = {
+            dictionary thumbnails = {
+                dictionary default = {
+                    asset defaultImage = @./thumbnail.png@
+                }
+            }
+        }
+    }
+    prepend inherits = </__class__/classic_window>
+    kind = "component"
+    prepend payload = @./payload.usdnc@
+)
+{
+    float3[] extentsHint = [(3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (-0.104717694, 1.1920929e-7, -0.093967356), (1.7993013, 2.10947, 0.49931377), (-0.10477126, 1.1920929e-7, -0.09396735), (1.7993405, 2.10947, 0.49937242)]
+}
+
+class "__class__"
+{
+    class "classic_window"
+    {
+    }
+}
+
